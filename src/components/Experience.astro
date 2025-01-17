@@ -1,0 +1,25 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE=
+[
+{
+        date: 'H',
+        title: 'aaaaaaaaaaaaaaaaaa',
+        description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+        link: 'a',
+    },
+    {
+        date: 'a',
+        title: 'a',
+        description: 'a',
+        link: '',
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-2.5">
+    {EXPERIENCE.map((experience) => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...experience} />
+        </li>
+    ))}
+</ol>

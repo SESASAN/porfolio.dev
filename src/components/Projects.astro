@@ -1,0 +1,42 @@
+---
+const PROJECTS = [
+
+    {
+        title:"SimONU JMB 2024",
+        description: "Creado con WIX. Es una página web para el evento de la simulación de la ONU de la Institución Educativa José María Bernal.",
+        link:"https://simonujomaber.wixsite.com/2024",
+        github:"",
+        image:"/projects/simonu2024.webp",
+        tags:[""],
+    }
+
+]
+---
+
+{
+
+    PROJECTS.map(project =>(
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+                {project.title} 
+            </h3>
+            <p class="text-lg mb-4 text-pretty">
+                {project.description}
+            </p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {project.tags&&(
+                    project.tags.map(tag =>(
+                        <li>
+                            <span class="flex gap-x-2 rounded-full text-xs py-1 px-2">
+                                {tag}
+                            </span>
+                        </li>
+                    ))
+                )
+                }
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={project.image} alt={`Captura de pantalla del proyecto ${project.title}`}>
+        </article>
+    ))
+    
+}
