@@ -24,16 +24,18 @@ const { description, title } = Astro.props
 		<link rel="icon" href="https://avatars.githubusercontent.com/u/19227127?v=4" />
 		<title>{title}</title>
 	</head>
-	<body class="bg-neutral-950">
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-
+	<body class="bg-neutral-950 relative min-h-screen">
+		<div class="absolute inset-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(189,38,6,0.3),rgba(255,255,255,0))]">
 		</div>
-	<Header>
-		
-	</Header>
-		<slot />
-	<Footer>
-	</Footer>
+		<div class="absolute bottom-0 left-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_140%,rgba(189,38,6,0.3),rgba(255,255,255,0))]">
+		</div>
+		<Header>
+		</Header>
+		<div class="flex flex-col grow">
+			<slot />
+		</div>
+		<Footer class="mt-10">
+		</Footer>
 	</body>
 	
 </html>
