@@ -1,9 +1,30 @@
-<header class="text-xs lg:text-base flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-    <nav class="flex flex-row gap-x-10 opacity-80">
-        <a href="">Inicio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-</header>
+<header>
+    <div class="text-xs lg:text-base flex justify-end md:justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
+            <nav class="hidden md:flex flex-row gap-x-10 opacity-80">
+                <a href="">Inicio</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#experiencia">Experiencia</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+    
+            <!-- Menú hamburguesa para móvil -->
+            <div class="md:hidden flex items-center px-6">
+                
+                <details class="md:hidden relative">
+                    <summary class="text-white cursor-pointer list-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </summary>
+                    <nav class="absolute right-0 mt-2 flex flex-col bg-neutral-900 rounded-md shadow-lg py-2 px-4 text-white gap-2 z-50">
+                        <a href="#inicio" class="hover:underline">Inicio</a>
+                        <a href="#sobre-mi" class="hover:underline">Sobre mí</a>
+                        <a href="#experiencia" class="hover:underline">Experiencia</a>
+                        <a href="#proyectos" class="hover:underline">Proyectos</a>
+                        <a href="#contacto" class="hover:underline">Contacto</a>
+                    </nav>
+                </details>
+        </div>
+    </div>
+    </header>
