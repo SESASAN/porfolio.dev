@@ -24,13 +24,31 @@ const TAGS={
 const PROJECTS = [
 
     {
+        title:"SimONU JMB 2025",
+        description: "Creado con WIX. Es la página web para la versión actualizada y reciente del evento de la simulación de la ONU de la Institución Educativa José María Bernal.",
+        link: "https://simonujomaber.wixsite.com/2025",
+        github:"",
+        image:"/projects/simonu2025.webp",
+        tags:[TAGS.WIX],
+    },
+
+    {
         title:"SimONU JMB 2024",
         description: "Creado con WIX. Es una página web para el evento de la simulación de la ONU de la Institución Educativa José María Bernal.",
         link: "https://simonujomaber.wixsite.com/2024",
         github:"",
         image:"/projects/simonu2024.webp",
         tags:[TAGS.WIX],
-    }
+    },
+
+    {
+        title:"SimONU Kids JMB 2024",
+        description: "Creado con WIX. Es una página web para el evento de la simulación de la ONU en la versión de los estudiantes de primaria pertenecientes de la Institución Educativa José María Bernal.",
+        link: "https://simonujomaber.wixsite.com/kids2024",
+        github:"",
+        image:"/projects/simonuKIDS2024.webp",
+        tags:[TAGS.WIX],
+    },
 
 ]
 ---
@@ -38,10 +56,10 @@ const PROJECTS = [
 {
 
     PROJECTS.map(project =>(
-        <article>
+        <article class="pb-10">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
                 <a href={`${project.link}`} target="_blank">
-                    {project.title} 
+                    • {project.title} 
                 </a>
             </h3>
             <p class="text-lg mb-4 text-pretty">
