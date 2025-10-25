@@ -2,6 +2,7 @@
 import AstroICON from '../icons/Astro.astro';
 import WixIcon from '../icons/Wix.astro';
 import TailwindIcon from '../icons/Tailwind.astro';
+import PythonIcon from '../icons/Python.astro';
 const TAGS={
     ASTRO:{
         title:"Astro",
@@ -17,12 +18,49 @@ const TAGS={
         title:"Tailwind CSS",
         class:"bg-white text-[#73bcf6]",
         icon: TailwindIcon
-    }
+    },
+    PYTHON:{
+        title:"Python",
+        class:"bg-[#3776ab] text-white",
+        icon: PythonIcon
+    },
+
 }
 
 
 const PROJECTS = [
-
+    /* {   
+        title:"Auto-Sigos",
+        description: "Creado en Python. Es un software que permite la automatización de pruebas para la plataforma GlobalRoamer, ahorrándole tiempo a los analistas de Tigo.",
+        link: "",
+        github:"",
+        image:"/projects/simonu2025.webp",
+        tags:[TAGS.PYTHON],
+    }, */
+    {   
+        title:"ZIA",
+        description: "Creado en Python. Es un software que analiza las alertas en los servicios fijos de la red HFC en la operación Tigo Pereira utilizando las APIs de Zabbix y crea alertas que salen en pantalla para avisar al personal sobre alguna anormalidad y genera los incidentes en la plataforma de la compañía.",
+        link: "",
+        github:"",
+        image:"/projects/Zia.webp",
+        tags:[TAGS.PYTHON],
+    },
+    {   
+        title:"NOCturnal",
+        description: "Creado en Python. Es un software que analiza las alertas en las redes DWDM y SDH de Tigo utilizando la tecnología Web Scraping y crea los incidentes en la plataforma de la compañía de forma automática.",
+        link: "",
+        github:"",
+        image:"/projects/Nocturnal.webp",
+        tags:[TAGS.PYTHON],
+    },
+    {   
+        title:"Fast 6.2",
+        description: "Creado en Python. Es un software que procesa los cambios más recientes en el control SOX CM 6.2 para Tigo, este reduce el tiempo de 3 días a sólo algunos minutos en la organización de los registros que contienen los últimos cambios tanto para las bases de datos como para los sistemas operativos y, gracias al nuevo estilo de entrega de registros, reduce el tiempo para los analistas de 3 días a sólo minutos.",
+        link: "",
+        github:"",
+        image:"/projects/Fast6.2.webp",
+        tags:[TAGS.PYTHON],
+    },
     {
         title:"SimONU JMB 2025",
         description: "Creado con WIX. Es la página web para la versión actualizada y reciente del evento de la simulación de la ONU de la Institución Educativa José María Bernal.",
@@ -58,9 +96,15 @@ const PROJECTS = [
     PROJECTS.map(project =>(
         <article class="pb-10">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
-                <a href={`${project.link}`} target="_blank">
-                    • {project.title} 
-                </a>
+                {project.link && project.link.trim() !== "" ? (
+                    <a href={`${project.link}`} target="_blank">
+                        • {project.title}
+                    </a>
+                ) : (
+                    <span>
+                        • {project.title}
+                    </span>
+                )}
             </h3>
             <p class="text-lg mb-4 text-pretty">
                 {project.description}
