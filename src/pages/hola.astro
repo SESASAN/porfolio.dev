@@ -1,0 +1,20 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+
+
+---
+
+<Layout title="Hola!" description="Una página divertida">
+    <img id="gif" src="/gifs/hi.gif" alt="Holaaaaaa">
+    <audio id="audioClip"><source src="/audios/Yeaaaaaah.mp3" /></audio>
+    <script>
+        const gif = document.getElementById('gif');
+        const audio = document.getElementById('audioClip');
+
+        gif.addEventListener('click', () => {
+            audio.currentTime = 0;
+            audio.play();
+        });
+    </script>
+</Layout>

@@ -25,7 +25,10 @@ const { description, title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body class="bg-neutral-950 relative min-h-screen">
-		<div class="absolute inset-0 z-[-2] w-full min-h-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(189,38,6,0.3),rgba(255,255,255,0))] pointer-events-none"></div>
+		<div
+		class="absolute inset-0 z-[-2] w-full min-h-full pointer-events-none
+		bg-neutral-950 [background-image:radial-gradient(ellipse_80%_80%_at_50%_-25%,rgba(189,38,6,0.2),rgba(255,255,255,0)),radial-gradient(ellipse_80%_80%_at_50%_150%,rgba(189,38,6,0.2),rgba(255,255,255,0))]"
+		></div>
 		<Header>
 		</Header>
 		<div class="flex flex-col grow">
