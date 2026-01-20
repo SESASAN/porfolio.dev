@@ -7,13 +7,49 @@ interface Props{
 }
     const {date, title, description, link} = Astro.props
 
+    const palabrasClave = [
+        {word: 'automatización', color: 'text-yellow-200', bold: false, italic: true},
+        {word: 'pruebas automatizadas', color: 'text-yellow-200', bold: false, italic: true},
+        {word: 'Inteligencia Artificial', color: 'text-sky-200', bold: false, italic: true},
+        {word: 'IA', color: 'text-sky-200', bold: false, italic: true},
+        {word: 'Cucumber', color: 'text-green-200', bold: true, italic: true},
+        {word: 'Playwright', color: 'text-red-200', bold: true, italic: false},
+        {word: 'GFT Technologies', color: 'text-gray-400', bold: true, italic: false},
+        {word: 'Tigo Colombia', color: 'text-blue-200', bold: true, italic: false},
+    ]
+
+    function highlightText(text: string, rules: typeof palabrasClave) {
+    let result = text;
+
+    rules.forEach(({ word, color, bold, italic }) => {
+        const classes = `${color} ${bold ? 'font-semibold' : ''} ${italic ? 'italic' : ''}`;
+        const regex = new RegExp(
+        `(?<!\\p{L})(${word})(?!\\p{L})`,
+        'giu'
+        )
+
+        result = result.replace(
+        regex,
+        `<span class="${classes}">$1</span>`
+        );
+    });
+
+    return result;
+    }
+
+    const formatedDescription = highlightText(description, palabrasClave);
+
 ---
 
 
 <div class="absolute size-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
         <time class="mb-2 text-sm font-normal leading-none text-sky-200/80">{date}</time>
         <h3 class="mb-1.5 text-lg font-semibold text-yellow-200">{title}</h3>
-        <p class="mb-2 text-base font-normal text-gray-200 text-pretty">{description}</p>
+        <p
+            class="mb-2 text-base font-normal text-gray-200 text-pretty"
+            set:html={formatedDescription}
+        />
+
         {link && (
             <a 
                 href={link} 
