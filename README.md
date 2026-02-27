@@ -108,4 +108,4 @@ Este portafolio tiene como propósito:
 
 - GitHub: https://github.com/SESASAN
 - Email: sesasan555@gmail.com
-- LinkedIn: (Agregar enlace)
+- LinkedIn: www.linkedin.com/in/sebastián-jesús-pérez-araujo
